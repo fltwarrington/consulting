@@ -190,6 +190,15 @@
   .field textarea{resize:vertical;min-height:98px;}
   .form-card .btn{width:100%;justify-content:center;margin-top:2px;}
   .honey{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
+  .resource{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,4vw,52px);align-items:center;background:var(--teal-tint);border:1px solid var(--teal-tint-2);border-radius:var(--radius);padding:clamp(28px,4vw,52px);overflow:hidden;}
+  .resource .eyebrow{color:var(--teal-deep);}
+  .resource h2{font-size:clamp(26px,3.4vw,38px);margin:14px 0 0;color:var(--ink);max-width:16ch;}
+  .resource p{margin:16px 0 0;color:var(--ink-soft);font-size:16.5px;max-width:46ch;}
+  .resource-points{list-style:none;padding:0;margin:18px 0 0;display:flex;flex-direction:column;gap:8px;}
+  .resource-points li{position:relative;padding-left:24px;font-size:14.5px;color:var(--ink-soft);}
+  .resource-points li::before{content:"";position:absolute;left:2px;top:7px;width:9px;height:9px;border-radius:3px;background:var(--teal);}
+  .checklist-reveal .btn{width:100%;justify-content:center;}
+  @media(max-width:720px){.resource{grid-template-columns:1fr;}}
   .form-status{font-size:14px;line-height:1.45;margin-top:14px;padding:11px 14px;border-radius:10px;display:none;}
   .form-status.show{display:block;}
   .form-status.ok{background:var(--teal-tint);border:1px solid var(--teal-tint-2);color:var(--teal-deep);}
@@ -253,6 +262,7 @@
       <a href="#approach">Approach</a>
       <a href="#services">Services</a>
       <a href="#cases">Case Studies</a>
+      <a href="#checklist">Free checklist</a>
       <a href="#contact">Contact</a>
     </nav>
     <div class="nav-cta">
@@ -591,6 +601,37 @@
   </div>
 </section>
 
+<!-- LEAD MAGNET: FREE CHECKLIST -->
+<span id="checklist" class="anchor"></span>
+<section class="section">
+  <div class="wrap">
+    <div class="resource">
+      <div class="resource-text">
+        <span class="eyebrow">Free resource</span>
+        <h2>Is your association data-ready?</h2>
+        <p>A 10-point checklist to gauge whether your data, relationships, and exports are ready for a migration — before you start one on a hope and a spreadsheet. Pop in your email and I’ll send it right over.</p>
+        <ul class="resource-points">
+          <li>Spot the gaps that quietly derail go-lives</li>
+          <li>Know what to fix before you migrate or buy</li>
+          <li>Walk into your AMS/CRM project prepared</li>
+        </ul>
+      </div>
+      <form class="form-card" id="checklistForm" action="https://formspree.io/f/xgobgwlk" method="POST">
+        <input type="hidden" name="_subject" value="New checklist request from your website" />
+        <input type="hidden" name="source" value="10-point data-readiness checklist" />
+        <div class="honey"><label>Leave this field empty<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label></div>
+        <div class="field"><label for="cl-name">Name</label><input id="cl-name" type="text" name="name" autocomplete="name" /></div>
+        <div class="field"><label for="cl-email">Email</label><input id="cl-email" type="email" name="email" autocomplete="email" required /></div>
+        <button type="submit" class="btn btn--primary">Send me the checklist</button>
+        <div class="form-status" id="checklistStatus" role="status" aria-live="polite"></div>
+        <div class="checklist-reveal" id="checklistReveal" style="display:none;margin-top:14px;">
+          <a class="btn btn--primary" href="/checklist.html" target="_blank" rel="noopener">Open your checklist →</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <span id="contact" class="anchor"></span>
 <section class="section">
@@ -686,6 +727,28 @@
           else{status.className='form-status err show';status.textContent='Something went wrong sending that. Please email tracy@twarrington.com instead.';}
         })
         .catch(function(){status.className='form-status err show';status.textContent='Something went wrong sending that. Please email tracy@twarrington.com instead.';})
+        .finally(function(){btn.textContent=orig;btn.disabled=false;});
+    });
+  }
+</script>
+<script>
+  // Checklist lead-magnet form
+  var clForm=document.getElementById('checklistForm');
+  if(clForm){
+    clForm.addEventListener('submit',function(e){
+      e.preventDefault();
+      var status=document.getElementById('checklistStatus');
+      var reveal=document.getElementById('checklistReveal');
+      var btn=clForm.querySelector('button[type="submit"]');
+      var action=clForm.getAttribute('action')||'';
+      var orig=btn.textContent; btn.textContent='Sending\u2026'; btn.disabled=true;
+      fetch(action,{method:'POST',body:new FormData(clForm),headers:{'Accept':'application/json'}})
+        .then(function(r){
+          if(r.ok){clForm.reset();status.className='form-status ok show';status.textContent='You\u2019re in \u2014 your checklist is ready below, and a copy just landed in my inbox.';}
+          else{status.className='form-status info show';status.textContent='Couldn\u2019t log your email just now, but here\u2019s your checklist anyway.';}
+          reveal.style.display='block';
+        })
+        .catch(function(){status.className='form-status info show';status.textContent='Couldn\u2019t log your email just now, but here\u2019s your checklist anyway.';reveal.style.display='block';})
         .finally(function(){btn.textContent=orig;btn.disabled=false;});
     });
   }
