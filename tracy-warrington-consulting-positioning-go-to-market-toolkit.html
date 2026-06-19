@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tracy Warrington — Consulting Positioning &amp; Go-to-Market Toolkit</title>
+<meta name="description" content="Business systems designer and process consultant. Tracy Warrington turns messy, manual processes into clear, reliable systems for associations, nonprofits, and small businesses." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#12161c;
+    --ink-soft:#2a323d;
+    --muted:#5c6675;
+    --muted-2:#828d9d;
+    --paper:#ffffff;
+    --paper-2:#f5f6f8;
+    --paper-3:#eef0f3;
+    --line:#e2e6eb;
+    --line-strong:#cfd5dd;
+    --teal:#0e7361;
+    --teal-deep:#0a5446;
+    --teal-tint:#e7f2ef;
+    --teal-tint-2:#d6e9e3;
+    --indigo:#3a44d6;
+    --indigo-tint:#ecedfb;
+    --amber:#c9852a;
+    --amber-tint:#f8efe0;
+    --radius:18px;
+    --radius-sm:12px;
+    --shadow:0 1px 2px rgba(18,22,28,.04), 0 12px 32px -16px rgba(18,22,28,.14);
+    --shadow-lg:0 2px 6px rgba(18,22,28,.05), 0 30px 60px -28px rgba(18,22,28,.22);
+    --maxw:1180px;
+    --serif:'Fraunces',Georgia,serif;
+    --sans:'Inter',system-ui,-apple-system,sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;scroll-padding-top:88px;}
+  body{
+    margin:0;
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.6;
+    font-size:17px;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.12;letter-spacing:-.012em;margin:0;color:var(--ink);}
+  p{margin:0 0 1rem;}
+  a{color:var(--teal);text-decoration:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(22px,6vw,64px);}
+  .eyebrow{
+    font-family:var(--mono);font-size:12.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--teal);display:inline-flex;align-items:center;gap:.6em;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--teal);opacity:.6;}
+  .eyebrow.plain::before{display:none;}
+  .section{padding:clamp(64px,9vw,118px) 0;position:relative;}
+  .section--alt{background:var(--paper-2);}
+  .section--ink{background:var(--ink);color:#e9edf2;}
+  .section-head{max-width:760px;margin-bottom:clamp(38px,5vw,60px);}
+  .section-head h2{font-size:clamp(30px,4.6vw,46px);margin:14px 0 0;}
+  .section-head p{margin-top:18px;font-size:clamp(17px,2vw,19px);color:var(--muted);}
+  .section--ink .section-head p{color:#aeb8c6;}
+  .lead{font-size:clamp(18px,2.2vw,21px);color:var(--ink-soft);}
+
+  /* NAV */
+  header.nav{
+    position:sticky;top:0;z-index:60;background:rgba(255,255,255,.86);
+    backdrop-filter:saturate(160%) blur(12px);border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px;}
+  .brand{display:flex;flex-direction:column;line-height:1.05;}
+  .brand b{font-family:var(--serif);font-weight:600;font-size:19px;letter-spacing:-.01em;}
+  .brand span{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted-2);margin-top:3px;}
+  .nav-links{display:flex;align-items:center;gap:28px;}
+  .nav-links a{color:var(--ink-soft);font-size:14.5px;font-weight:500;letter-spacing:-.01em;transition:color .15s;}
+  .nav-links a:hover{color:var(--teal);}
+  .btn{
+    display:inline-flex;align-items:center;gap:.55em;font-weight:600;font-size:15px;border-radius:999px;
+    padding:.72em 1.35em;cursor:pointer;border:1px solid transparent;transition:transform .15s,box-shadow .15s,background .15s,color .15s;
+    font-family:var(--sans);
+  }
+  .btn--primary{background:var(--teal);color:#fff;box-shadow:0 8px 20px -10px rgba(14,115,97,.7);}
+  .btn--primary:hover{background:var(--teal-deep);transform:translateY(-1px);}
+  .btn--ghost{background:transparent;color:var(--ink);border-color:var(--line-strong);}
+  .btn--ghost:hover{border-color:var(--ink);transform:translateY(-1px);}
+  .btn--light{background:#fff;color:var(--ink);}
+  .btn--light:hover{transform:translateY(-1px);box-shadow:var(--shadow);}
+  .nav-cta{display:flex;align-items:center;gap:14px;}
+  .menu-toggle{display:none;background:none;border:1px solid var(--line-strong);border-radius:10px;padding:8px 10px;cursor:pointer;}
+  .menu-toggle span{display:block;width:20px;height:2px;background:var(--ink);margin:4px 0;border-radius:2px;}
+
+  /* HERO */
+  .hero{padding:clamp(56px,8vw,104px) 0 clamp(50px,7vw,86px);position:relative;overflow:hidden;}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(36px,5vw,72px);align-items:center;}
+  .hero h1{font-size:clamp(38px,6vw,68px);line-height:1.02;margin:20px 0 0;letter-spacing:-.02em;}
+  .hero h1 em{font-style:italic;color:var(--teal);}
+  .hero .lead{margin-top:24px;max-width:560px;}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px;}
+  .hero-meta{margin-top:38px;display:flex;flex-wrap:wrap;gap:10px 26px;align-items:center;}
+  .hero-meta span{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--muted);display:inline-flex;align-items:center;gap:.5em;}
+  .hero-meta span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--teal);opacity:.55;}
+
+  /* systems diagram motif */
+  .diagram{
+    position:relative;border:1px solid var(--line);border-radius:var(--radius);background:
+      linear-gradient(180deg,#fff, #fbfcfd);padding:26px;box-shadow:var(--shadow-lg);
+  }
+  .diagram-label{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-2);margin-bottom:18px;display:flex;justify-content:space-between;}
+  .flow{display:flex;flex-direction:column;gap:0;}
+  .flow-row{display:flex;align-items:center;gap:14px;padding:13px 0;}
+  .node{
+    flex:1;border:1px solid var(--line);border-radius:11px;padding:11px 14px;background:#fff;
+    font-size:13.5px;font-weight:500;color:var(--ink-soft);display:flex;align-items:center;gap:10px;
+  }
+  .node .dot{width:9px;height:9px;border-radius:50%;flex:none;}
+  .node.messy{border-style:dashed;color:var(--muted);background:var(--paper-2);}
+  .node.messy .dot{background:var(--muted-2);}
+  .node.clean{border-color:var(--teal-tint-2);background:var(--teal-tint);}
+  .node.clean .dot{background:var(--teal);}
+  .flow-arrow{display:flex;align-items:center;justify-content:center;color:var(--teal);font-family:var(--mono);font-size:13px;padding:2px 0;}
+  .flow-arrow svg{width:18px;height:18px;}
+  .connector{height:16px;width:1px;background:var(--line-strong);margin-left:21px;}
+
+  /* GENERIC CARDS */
+  .grid{display:grid;gap:22px;}
+  .g-2{grid-template-columns:repeat(2,1fr);}
+  .g-3{grid-template-columns:repeat(3,1fr);}
+  .g-4{grid-template-columns:repeat(4,1fr);}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);}
+  .section--alt .card{background:#fff;}
+  .card h3{font-size:21px;}
+  .card .kicker{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2);margin-bottom:12px;}
+
+  /* POSITIONING */
+  .value-block{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,68px);align-items:start;}
+  .value-block .statement{font-family:var(--serif);font-size:clamp(22px,2.7vw,29px);line-height:1.32;color:var(--ink);letter-spacing:-.01em;}
+  .value-block .statement em{font-style:italic;color:var(--teal);}
+  .pill-row{display:flex;flex-wrap:wrap;gap:9px;margin-top:8px;}
+  .pill{font-size:13px;font-weight:500;color:var(--ink-soft);background:var(--paper-2);border:1px solid var(--line);border-radius:999px;padding:.42em .95em;}
+
+  .track-card{position:relative;border-radius:var(--radius);padding:30px;border:1px solid var(--line);background:#fff;box-shadow:var(--shadow);overflow:hidden;}
+  .track-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;}
+  .track-card.a::before{background:linear-gradient(90deg,var(--teal),#3aa78f);}
+  .track-card.b::before{background:linear-gradient(90deg,var(--indigo),#6f78ee);}
+  .track-tag{display:inline-flex;align-items:center;gap:.5em;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;padding:.4em .8em;border-radius:999px;margin-bottom:14px;}
+  .track-card.a .track-tag{color:var(--teal-deep);background:var(--teal-tint);}
+  .track-card.b .track-tag{color:var(--indigo);background:var(--indigo-tint);}
+  .track-card h3{font-size:24px;margin-bottom:8px;}
+  .track-card .who{font-size:14px;color:var(--muted);margin-top:16px;padding-top:16px;border-top:1px solid var(--line);}
+  .track-card .who b{color:var(--ink-soft);font-weight:600;}
+
+  .reasons{display:grid;grid-template-columns:repeat(2,1fr);gap:0;margin-top:8px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff;}
+  .reason{padding:26px 28px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);}
+  .reason:nth-child(2n){border-right:none;}
+  .reason:nth-last-child(-n+2){border-bottom:none;}
+  .reason .num{font-family:var(--mono);font-size:12px;color:var(--teal);font-weight:600;letter-spacing:.1em;}
+  .reason h4{font-size:18px;margin:10px 0 7px;font-family:var(--serif);}
+  .reason p{font-size:14.5px;color:var(--muted);margin:0;}
+
+  /* SERVICES */
+  .track-switch{display:flex;gap:8px;margin-bottom:34px;flex-wrap:wrap;}
+  .track-band{display:flex;align-items:center;gap:12px;margin:46px 0 22px;}
+  .track-band .lab{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;padding:.5em 1em;border-radius:8px;}
+  .track-band.a .lab{color:var(--teal-deep);background:var(--teal-tint);}
+  .track-band.b .lab{color:var(--indigo);background:var(--indigo-tint);}
+  .track-band .ln{flex:1;height:1px;background:var(--line);}
+  .track-band p{margin:0;font-size:14px;color:var(--muted);max-width:420px;}
+
+  .svc{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;gap:0;box-shadow:var(--shadow);height:100%;}
+  .svc .svc-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;}
+  .svc h4{font-size:20px;font-family:var(--serif);}
+  .svc .model{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted-2);white-space:nowrap;border:1px solid var(--line);border-radius:7px;padding:.35em .6em;flex:none;}
+  .svc .desc{font-size:14.5px;color:var(--muted);margin:12px 0 16px;}
+  .svc ul{list-style:none;padding:0;margin:0 0 16px;display:flex;flex-direction:column;gap:8px;}
+  .svc li{font-size:13.6px;color:var(--ink-soft);padding-left:22px;position:relative;line-height:1.45;}
+  .svc li::before{content:"";position:absolute;left:2px;top:8px;width:9px;height:9px;border-radius:3px;background:var(--teal-tint-2);border:1px solid var(--teal);}
+  .svc.b li::before{background:var(--indigo-tint);border-color:var(--indigo);}
+  .svc .outcome{margin-top:auto;font-size:13.5px;border-top:1px dashed var(--line-strong);padding-top:14px;color:var(--ink-soft);}
+  .svc .outcome b{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:5px;}
+  .svc.b .outcome b{color:var(--indigo);}
+
+  /* PROCESS STRIP */
+  .process{display:grid;grid-template-columns:repeat(6,1fr);gap:0;border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);overflow:hidden;}
+  .step{padding:26px 20px;border-right:1px solid rgba(255,255,255,.12);position:relative;}
+  .step:last-child{border-right:none;}
+  .step .st-n{font-family:var(--mono);font-size:12px;color:#5fd6bd;letter-spacing:.1em;}
+  .step h4{color:#fff;font-size:18px;margin:12px 0 8px;font-family:var(--serif);}
+  .step p{font-size:13px;color:#9fb0c0;margin:0;}
+
+  /* CASE STUDIES */
+  .case{display:grid;grid-template-columns:.92fr 1.08fr;gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff;box-shadow:var(--shadow);margin-bottom:26px;}
+  .case .case-side{padding:32px;background:linear-gradient(165deg,#fbfcfd,#f1f4f6);border-right:1px solid var(--line);display:flex;flex-direction:column;}
+  .case .case-tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--teal);font-weight:600;margin-bottom:14px;}
+  .case h3{font-size:25px;line-height:1.16;}
+  .case .ctx{font-size:14px;color:var(--muted);margin-top:14px;}
+  .case .caps{margin-top:auto;padding-top:22px;display:flex;flex-wrap:wrap;gap:7px;}
+  .case .caps span{font-size:11.5px;font-weight:500;color:var(--ink-soft);background:#fff;border:1px solid var(--line-strong);border-radius:999px;padding:.34em .8em;}
+  .case .case-body{padding:32px;display:flex;flex-direction:column;gap:20px;}
+  .cs-block .cs-h{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted-2);margin-bottom:7px;display:flex;align-items:center;gap:8px;}
+  .cs-block .cs-h::before{content:"";width:14px;height:1px;background:var(--line-strong);}
+  .cs-block p{font-size:14.6px;margin:0;color:var(--ink-soft);}
+  .cs-block.outcome ul{margin:0;padding:0;list-style:none;display:grid;gap:7px;}
+  .cs-block.outcome li{font-size:14px;color:var(--ink-soft);padding-left:24px;position:relative;}
+  .cs-block.outcome li::before{content:"✓";position:absolute;left:0;top:0;color:var(--teal);font-weight:700;}
+
+  /* PRICING */
+  .ladder{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:46px;}
+  .rung{border:1px solid var(--line);border-radius:var(--radius);padding:26px;background:#fff;position:relative;box-shadow:var(--shadow);}
+  .rung .rn{font-family:var(--mono);font-size:12px;color:var(--teal);letter-spacing:.1em;font-weight:600;}
+  .rung h4{font-size:20px;margin:10px 0 8px;font-family:var(--serif);}
+  .rung p{font-size:14px;color:var(--muted);margin:0 0 14px;}
+  .rung .tagm{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:.4em .7em;display:inline-block;}
+  .rung .arrow-down{position:absolute;right:-13px;top:50%;transform:translateY(-50%);z-index:2;color:var(--teal);background:#fff;border:1px solid var(--line);border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;}
+
+  table.pricing{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;font-size:14px;}
+  table.pricing th,table.pricing td{text-align:left;padding:15px 18px;border-bottom:1px solid var(--line);vertical-align:top;}
+  table.pricing thead th{background:var(--ink);color:#fff;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:500;}
+  table.pricing tbody tr:last-child td{border-bottom:none;}
+  table.pricing td:first-child{font-weight:600;color:var(--ink);font-family:var(--serif);font-size:15.5px;}
+  table.pricing .muted{color:var(--muted);}
+  .map-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:30px;}
+  .map-item{display:flex;justify-content:space-between;gap:16px;align-items:baseline;padding:14px 18px;border:1px solid var(--line);border-radius:12px;background:#fff;font-size:14px;}
+  .map-item .svc-n{font-weight:600;color:var(--ink);}
+  .map-item .mdl{font-family:var(--mono);font-size:11.5px;color:var(--teal);text-align:right;flex:none;}
+  .note-card{margin-top:30px;border-left:3px solid var(--teal);background:var(--teal-tint);border-radius:0 12px 12px 0;padding:22px 26px;}
+  .note-card .eyebrow{color:var(--teal-deep);}
+  .note-card p{margin:10px 0 0;font-size:14.6px;color:var(--ink-soft);}
+
+  /* COPY BLOCKS */
+  .copy-block{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);margin-bottom:20px;}
+  .copy-head{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 22px;background:var(--paper-2);border-bottom:1px solid var(--line);}
+  .copy-head h4{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--ink);}
+  .copy-head .tagm{font-family:var(--mono);font-size:10.5px;color:var(--muted-2);letter-spacing:.05em;}
+  .copy-body{padding:24px 26px;}
+  .copy-body .opt{padding:14px 0;border-bottom:1px dashed var(--line);}
+  .copy-body .opt:last-child{border-bottom:none;padding-bottom:0;}
+  .copy-body .opt:first-child{padding-top:0;}
+  .copy-body .opt .ol{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:6px;}
+  .copy-body .hl{font-family:var(--serif);font-size:20px;line-height:1.3;color:var(--ink);}
+  .copy-body p{font-size:14.8px;color:var(--ink-soft);margin:0 0 10px;}
+  .copy-body p:last-child{margin-bottom:0;}
+  .copy-body .small{font-size:13.5px;color:var(--muted);}
+  .tagline-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+  .tagline{font-family:var(--serif);font-size:17px;color:var(--ink);padding:14px 18px;border:1px solid var(--line);border-radius:12px;background:var(--paper-2);}
+  .tagline span{font-family:var(--mono);font-size:10px;color:var(--muted-2);display:block;letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px;}
+
+  /* LINKEDIN */
+  .li-headline{font-size:15.5px;color:var(--ink);background:var(--paper-2);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px;font-weight:500;}
+  .li-headline span{font-family:var(--mono);font-size:10px;color:var(--muted-2);display:block;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;font-weight:600;}
+  .pillar{border:1px solid var(--line);border-radius:14px;padding:22px;background:#fff;box-shadow:var(--shadow);}
+  .pillar .pn{width:34px;height:34px;border-radius:9px;background:var(--teal-tint);color:var(--teal-deep);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-weight:600;font-size:14px;margin-bottom:14px;}
+  .pillar h4{font-size:17px;font-family:var(--serif);margin-bottom:7px;}
+  .pillar p{font-size:13.6px;color:var(--muted);margin:0;}
+  .post{border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow);overflow:hidden;}
+  .post-head{padding:14px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--paper-2);}
+  .post-head .tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);font-weight:600;}
+  .post-head .fmt{font-family:var(--mono);font-size:10px;color:var(--muted-2);}
+  .post-body{padding:22px 22px;font-size:14.6px;color:var(--ink-soft);white-space:pre-line;line-height:1.62;}
+  .post-body .hook{font-weight:600;color:var(--ink);}
+
+  /* FOOTER / NEXT STEPS */
+  .closer{background:var(--ink);color:#e9edf2;border-radius:var(--radius);padding:clamp(40px,6vw,64px);text-align:center;position:relative;overflow:hidden;}
+  .closer h2{color:#fff;font-size:clamp(28px,4.4vw,42px);max-width:680px;margin:14px auto 0;}
+  .closer p{color:#aeb8c6;max-width:560px;margin:18px auto 30px;font-size:17px;}
+  .closer .hero-cta{justify-content:center;}
+  .usegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:14px;text-align:left;}
+  .usecard{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:22px;}
+  .usecard .un{font-family:var(--mono);font-size:11px;color:#5fd6bd;letter-spacing:.1em;}
+  .usecard h4{color:#fff;font-size:16px;margin:9px 0 7px;font-family:var(--serif);}
+  .usecard p{font-size:13.4px;color:#9fb0c0;margin:0;}
+
+  footer.foot{padding:40px 0;border-top:1px solid var(--line);background:var(--paper);}
+  .foot-inner{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;}
+  .foot-inner .brand b{font-size:17px;}
+  .foot-note{font-size:13px;color:var(--muted-2);max-width:520px;}
+
+  .anchor{position:relative;top:-80px;visibility:hidden;}
+
+  /* RESPONSIVE */
+  @media(max-width:960px){
+    .hero-grid{grid-template-columns:1fr;}
+    .diagram{order:2;max-width:520px;}
+    .value-block{grid-template-columns:1fr;gap:28px;}
+    .g-4{grid-template-columns:repeat(2,1fr);}
+    .process{grid-template-columns:repeat(2,1fr);}
+    .step{border-bottom:1px solid rgba(255,255,255,.12);}
+    .case{grid-template-columns:1fr;}
+    .case .case-side{border-right:none;border-bottom:1px solid var(--line);}
+    .ladder{grid-template-columns:1fr;}
+    .rung .arrow-down{display:none;}
+    .usegrid{grid-template-columns:1fr;}
+  }
+  @media(max-width:720px){
+    body{font-size:16px;}
+    .nav-links{display:none;}
+    .menu-toggle{display:block;}
+    .nav-links.open{display:flex;position:absolute;top:68px;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;gap:0;border-bottom:1px solid var(--line);padding:8px 0;box-shadow:var(--shadow);}
+    .nav-links.open a{padding:13px clamp(22px,6vw,64px);width:100%;border-bottom:1px solid var(--paper-3);}
+    .g-2,.g-3,.g-4,.reasons,.map-list,.tagline-grid{grid-template-columns:1fr;}
+    .reason{border-right:none;}
+    .process{grid-template-columns:1fr;}
+    .nav-cta .btn--primary{display:none;}
+  }
+</style>
+<style>
+.ha-img-placeholder{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;background:#f4f4f5;border:1px dashed #d4d4d8;border-radius:8px;color:#71717a;font-size:12px;font-family:system-ui,sans-serif;min-height:80px;padding:16px;box-sizing:border-box;animation:ha-img-pulse 1.5s ease-in-out infinite}
+.ha-img-placeholder.ha-failed{animation:none;opacity:.7}
+@keyframes ha-img-pulse{0%,100%{opacity:1}50%{opacity:.5}}
+@media(prefers-color-scheme:dark){.ha-img-placeholder{background:#27272a;border-color:#3f3f46;color:#a1a1aa}}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <div class="brand">
+      <b>Tracy Warrington</b>
+      <span>Systems Designer · Process Consultant</span>
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#positioning">Positioning</a>
+      <a href="#services">Services</a>
+      <a href="#cases">Case Studies</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#copy">Website Copy</a>
+      <a href="#linkedin">LinkedIn</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn--primary">Start a conversation</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Business systems designer · Data &amp; process consultant</span>
+      <h1>I turn messy, manual processes into systems people can <em>actually run.</em></h1>
+      <p class="lead">For associations, nonprofits, and small businesses that have outgrown spreadsheets, sticky notes, and tribal knowledge. I find what is really causing the friction, then design practical systems that make the work faster, clearer, and more reliable.</p>
+      <p style="max-width:540px;color:var(--muted);font-size:16px;margin-top:-2px;">Data, automation, and AI are tools I use — clear thinking about your process is the real work.</p>
+      <div class="hero-cta">
+        <a href="#services" class="btn btn--primary">See how I help</a>
+        <a href="#cases" class="btn btn--ghost">View case studies</a>
+      </div>
+      <div class="hero-meta">
+        <span>Associations</span>
+        <span>Nonprofits</span>
+        <span>Leadership programs</span>
+        <span>Universities</span>
+        <span>Small business &amp; e-commerce</span>
+      </div>
+    </div>
+    <div class="diagram" aria-hidden="true">
+      <div class="diagram-label"><span>Before</span><span>After</span></div>
+      <div class="flow">
+        <div class="flow-row">
+          <div class="node messy"><span class="dot"></span>Paper charts &amp; spreadsheets</div>
+        </div>
+        <div class="connector"></div>
+        <div class="flow-row">
+          <div class="node messy"><span class="dot"></span>Manual re-entry &amp; workarounds</div>
+        </div>
+        <div class="flow-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+        </div>
+        <div class="flow-row">
+          <div class="node clean"><span class="dot"></span>One source of truth</div>
+        </div>
+        <div class="connector"></div>
+        <div class="flow-row">
+          <div class="node clean"><span class="dot"></span>Automated handoffs &amp; reporting</div>
+        </div>
+        <div class="connector"></div>
+        <div class="flow-row">
+          <div class="node clean"><span class="dot"></span>Decisions made with confidence</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POSITIONING ============ -->
+<span id="positioning" class="anchor"></span>
+<section class="section section--alt">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Positioning</span>
+      <h2>A systems thinker — not a generic AI consultant.</h2>
+      <p>Tracy's greatest strength is the ability to understand a messy process, identify what is actually causing the friction, and design practical systems that help people work more effectively. Technology is in service of that — never the other way around.</p>
+    </div>
+
+    <div class="value-block">
+      <div class="statement">
+        I help mission-driven organizations and small businesses replace fragile, manual processes with <em>systems they can trust</em> — so the right work happens automatically, decisions are based on data, and the knowledge doesn't live in one person's head.
+      </div>
+      <div>
+        <p style="color:var(--muted);margin-bottom:18px;">What that looks like in practice:</p>
+        <div class="pill-row">
+          <span class="pill">Business process analysis</span>
+          <span class="pill">Workflow design &amp; optimization</span>
+          <span class="pill">Data architecture &amp; migration planning</span>
+          <span class="pill">Decision-support systems</span>
+          <span class="pill">Association management systems</span>
+          <span class="pill">Automation &amp; integrations</span>
+          <span class="pill">Airtable &amp; Make.com</span>
+          <span class="pill">AI-assisted operations</span>
+          <span class="pill">Reporting &amp; analytics</span>
+          <span class="pill">Documentation &amp; training</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- DUAL TRACK -->
+    <div style="margin-top:clamp(44px,6vw,72px);">
+      <span class="eyebrow plain" style="color:var(--muted-2);">Two ways I work · one way of thinking</span>
+      <div class="grid g-2" style="margin-top:18px;">
+        <div class="track-card a">
+          <span class="track-tag">Track A · Anchor focus</span>
+          <h3>Association &amp; Nonprofit Data + Systems</h3>
+          <p style="color:var(--muted);font-size:15px;">Get your data and processes ready for the systems you're moving into — or already struggling to run. Data-readiness assessments, migration preparation, decision-support tools, and process redesign built for member- and volunteer-driven organizations.</p>
+          <div class="who"><b>Best for:</b> state &amp; regional associations, professional societies, chambers, foundations, leadership programs, and nonprofits — especially lightly-staffed or volunteer-led teams facing a software change or a process that's drowning in spreadsheets.</div>
+        </div>
+        <div class="track-card b">
+          <span class="track-tag">Track B · Growth focus</span>
+          <h3>Small Business Operations &amp; Automation</h3>
+          <p style="color:var(--muted);font-size:15px;">One connected operating system instead of ten disconnected tools. Workflow design and automation — Airtable, Make.com, AI-assisted where it earns its place — that runs quietly in the background so your team can focus on the work that matters.</p>
+          <div class="who"><b>Best for:</b> owner-operated and small service or e-commerce businesses running on a patchwork of tools, spreadsheets, and "the way we've always done it" — ready for systems that scale without adding headcount.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DIFFERENTIATORS -->
+    <div style="margin-top:clamp(44px,6vw,72px);">
+      <span class="eyebrow plain" style="color:var(--muted-2);">Why clients choose Tracy</span>
+      <div class="reasons" style="margin-top:18px;">
+        <div class="reason"><div class="num">01</div><h4>A systems thinker, not a software salesperson</h4><p>Tool-agnostic by design. The process comes first; the technology is chosen to fit — not the other way around.</p></div>
+        <div class="reason"><div class="num">02</div><h4>At home in the messy middle</h4><p>Volunteer boards, limited staff, legacy data, "we can't even export it." This is exactly the gap she's built a career closing.</p></div>
+        <div class="reason"><div class="num">03</div><h4>Decision-support, not just dashboards</h4><p>She builds tools leaders actually use in the room — turning complex, multi-factor decisions into a clear, real-time picture.</p></div>
+        <div class="reason"><div class="num">04</div><h4>End-to-end and built to last</h4><p>Design, build, document, and train — so the system keeps working long after the engagement ends, without depending on her.</p></div>
+        <div class="reason"><div class="num">05</div><h4>AI used responsibly</h4><p>One tool among many, plugged in where it genuinely helps — and left out where it doesn't. No hype, no dependency on the trend of the month.</p></div>
+        <div class="reason"><div class="num">06</div><h4>Fluent in operations and people</h4><p>Systems only work if people use them. Tracy designs for the humans doing the work, then documents and trains so adoption sticks.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<span id="services" class="anchor"></span>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Services &amp; Packages</span>
+      <h2>Productized engagements with clear scope and outcomes.</h2>
+      <p>Every engagement starts with understanding the real process. Most begin with a paid diagnostic that locks scope before any build — so you know what you're getting, and the work stays focused on what actually moves the needle.</p>
+    </div>
+
+    <!-- TRACK A SERVICES -->
+    <div class="track-band a">
+      <span class="lab">Track A · Associations &amp; Nonprofits</span>
+      <span class="ln"></span>
+      <p>Data readiness, migration prep, and decision-support for member-driven organizations.</p>
+    </div>
+    <div class="grid g-2">
+      <div class="svc">
+        <div class="svc-top"><h4>Data Readiness Assessment</h4><span class="model">Fixed fee</span></div>
+        <div class="desc">Before you migrate or buy: a clear-eyed audit of your data, relationships, and gaps — with a prioritized roadmap to get implementation-ready.</div>
+        <ul>
+          <li>Data inventory across every system, spreadsheet, and inbox</li>
+          <li>Quality &amp; risk findings: duplicates, gaps, inconsistent definitions</li>
+          <li>Relationship &amp; field-mapping plan for your target system</li>
+          <li>Readiness scorecard with a prioritized "fix-first" list</li>
+        </ul>
+        <div class="outcome"><b>Outcome</b>Walk into your AMS/CRM project knowing exactly what you have and what to fix first.</div>
+      </div>
+      <div class="svc">
+        <div class="svc-top"><h4>Migration Preparation &amp; Data Mapping</h4><span class="model">Fixed / phased</span></div>
+        <div class="desc">Hands-on preparation to get legacy data clean, mapped, and export-ready — so your new platform launches on data you can trust.</div>
+        <ul>
+          <li>De-duplication, standardization, and archiving of dead records</li>
+          <li>Field-by-field mapping to the new system's data model</li>
+          <li>Test-migration support and validation checks</li>
+          <li>A documented migration plan your vendor and team can follow</li>
+        </ul>
+        <div class="outcome"><b>Outcome</b>A smoother implementation and reliable data on day one — not months of cleanup after go-live.</div>
+      </div>
+      <div class="svc">
+        <div class="svc-top"><h4>Decision-Support System Design</h4><span class="model">Fixed-fee build</span></div>
+        <div class="desc">Custom tools that turn complex, multi-factor decisions — selection, scoring, allocation, representation balance — into a clear, real-time picture.</div>
+        <ul>
+          <li>Multi-factor modeling (scores, demographics, geography, goals)</li>
+          <li>Real-time scenario analysis as decisions change</li>
+          <li>Executive-ready views the whole committee can read at a glance</li>
+          <li>Reusable, documented, and built to run year after year</li>
+        </ul>
+        <div class="outcome"><b>Outcome</b>Better decisions made faster, with everyone looking at the same numbers.</div>
+      </div>
+      <div class="svc">
+        <div class="svc-top"><h4>Process &amp; Systems Consulting</h4><span class="model">Project / retainer</span></div>
+        <div class="desc">Map and redesign the workflows behind membership, events, applications, reviews, and reporting — reducing manual effort and the errors that come with it.</div>
+        <ul>
+          <li>End-to-end process mapping and friction analysis</li>
+          <li>Workflow redesign and automation opportunities</li>
+          <li>Reporting and analytics that leadership can rely on</li>
+          <li>Documentation and staff/volunteer training</li>
+        </ul>
+        <div class="outcome"><b>Outcome</b>Operations that run on systems and standards, not on one person's memory.</div>
+      </div>
+    </div>
+
+    <!-- TRACK B SERVICES -->
+    <div class="track-band b">
+      <span class="lab">Track B · Small Business</span>
+      <span class="ln"></span>
+      <p>A connected operating system: source of truth, automated handoffs, documentation, training.</p>
+    </div>
+    <div class="grid g-2">
+      <div class="svc b">
+        <div class="svc-top"><h4>Operations Diagnostic</h4><span class="model">Paid discovery</span></div>
+        <div class="desc">Map how work really flows through your business, find the friction, and leave with a prioritized plan for systems and automation.</div>
+        <ul>
+          <li>Workflow mapping: how leads, orders, and work move today</li>
+          <li>Friction &amp; bottleneck analysis with root causes</li>
+          <li>Tool audit — what to keep, connect, replace, or retire</li>
+          <li>A prioritized roadmap with quick wins and bigger bets</li>
+        </ul>
+        <div class="outcome"><b>Outcome</b>A clear, low-risk first step — and a plan you could hand to anyone.</div>
+      </div>
+      <div class="svc b">
+        <div class="svc-top"><h4>Operations System Build</h4><span class="model">Fixed-fee project</span></div>
+        <div class="desc">Design and build your connected operating system — a central source of truth, automated handoffs between the tools you use, and the documentation to run it.</div>
+        <ul>
+          <li>Airtable as the structured single source of truth</li>
+          <li>Make.com automations that remove manual handoffs</li>
+          <li>Catalog, inventory, fulfillment, and reporting workflows</li>
+          <li>Process documentation and hands-on team training</li>
+        </ul>
+        <div class="outcome"><b>Outcome</b>A complete, working system your team will actually use — and understand.</div>
+      </div>
+      <div class="svc b">
+        <div class="svc-top"><h4>Workflow Automation &amp; Integration</h4><span class="model">Fixed per build</span></div>
+        <div class="desc">Targeted automations that remove repetitive work and connect the tools you already rely on — with AI plugged in where it genuinely helps.</div>
+        <ul>
+          <li>Repetitive-task automation and data sync between systems</li>
+          <li>AI-assisted steps (drafting, classification, enrichment)</li>
+          <li>Error handling and alerts so automations stay trustworthy</li>
+          <li>Clear documentation for ongoing maintenance</li>
+        </ul>
+        <div class="outcome"><b>Outcome</b>Hours of manual work disappear — quietly, reliably, in the background.</div>
+      </div>
+      <div class="svc b">
+        <div class="svc-top"><h4>Fractional Operations Support</h4><span class="model">Monthly retainer</span></div>
+        <div class="desc">Ongoing design, automation, and optimization as your business changes — a dedicated systems partner without a full-time hire.</div>
+        <ul>
+          <li>A defined set of monthly improvements and priorities</li>
+          <li>Maintenance and evolution of your systems and automations</li>
+          <li>New workflow design as the business grows</li>
+          <li>A standing partner who already knows your operation</li>
+        </ul>
+        <div class="outcome"><b>Outcome</b>Your operating system keeps improving instead of quietly decaying.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- HOW I WORK (ink band) -->
+<section class="section section--ink" style="padding-top:clamp(54px,7vw,86px);padding-bottom:clamp(54px,7vw,86px);">
+  <div class="wrap">
+    <div class="section-head" style="max-width:680px;">
+      <span class="eyebrow" style="color:#5fd6bd;">How I work</span>
+      <h2 style="color:#fff;">A repeatable path from friction to finished system.</h2>
+      <p style="color:#aeb8c6;">The same disciplined sequence whether it's an association data migration or a small-business operations build. Each step de-risks the next.</p>
+    </div>
+    <div class="process">
+      <div class="step"><div class="st-n">01</div><h4>Discover</h4><p>Understand the real process — and the people running it.</p></div>
+      <div class="step"><div class="st-n">02</div><h4>Diagnose</h4><p>Find the root causes of friction, not just the symptoms.</p></div>
+      <div class="step"><div class="st-n">03</div><h4>Design</h4><p>Map the better workflow and the system that supports it.</p></div>
+      <div class="step"><div class="st-n">04</div><h4>Build</h4><p>Build it practically — data, automation, AI where it helps.</p></div>
+      <div class="step"><div class="st-n">05</div><h4>Document &amp; Train</h4><p>Capture how it works so the team owns it.</p></div>
+      <div class="step"><div class="st-n">06</div><h4>Support</h4><p>Refine and evolve as the organization changes.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CASE STUDIES ============ -->
+<span id="cases" class="anchor"></span>
+<section class="section section--alt">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Case Studies</span>
+      <h2>Real problems, designed away.</h2>
+      <p>A pattern runs through every project: a complicated, manual process; a careful read of what's really going wrong; and a practical system that makes the work easier, faster, and more reliable.</p>
+    </div>
+
+    <!-- CASE 1 -->
+    <div class="case">
+      <div class="case-side">
+        <div class="case-tag">Decision-Support · Leadership Program</div>
+        <h3>The selection committee that ran on paper and stick figures</h3>
+        <p class="ctx">A statewide leadership organization selected its class through a complex, committee-driven process — balancing application scores, references, geography, gender, age, industry, and diversity goals, all at once.</p>
+        <div class="caps">
+          <span>Decision-support design</span><span>Multi-factor optimization</span><span>Data modeling</span><span>Executive reporting</span><span>Stakeholder workflow</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <div class="cs-block"><div class="cs-h">The friction</div><p>Committee members tracked demographic balance on large paper charts with stick figures posted around the room. As applicants moved between Accepted, Hold, Alternate, and Declined throughout the day, every board had to be updated by hand — slow, error-prone, and impossible to see clearly in the moment.</p></div>
+        <div class="cs-block"><div class="cs-h">The system</div><p>A real-time decision-support tool, built in Excel, that tracked applicant status, calculated demographic balance, displayed geographic representation, and supported live scenario analysis — updating the full class composition instantly as decisions changed.</p></div>
+        <div class="cs-block outcome"><div class="cs-h">The outcome</div>
+          <ul>
+            <li>Eliminated the manual tracking process entirely</li>
+            <li>Gave the committee real-time visibility during selection meetings</li>
+            <li>Supported more informed, more confident decisions</li>
+            <li>Adopted as the standard process — reused year after year</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE 2 -->
+    <div class="case">
+      <div class="case-side">
+        <div class="case-tag">Operations Platform · E-commerce</div>
+        <h3>Etsy Command Center: many shops, one operating system</h3>
+        <p class="ctx">Running multiple e-commerce shops meant juggling disconnected processes — listing creation, AI artwork, mockups, inventory, fulfillment, analytics, and publishing — each in its own place.</p>
+        <div class="caps">
+          <span>Systems architecture</span><span>Workflow orchestration</span><span>API integrations</span><span>Automation design</span><span>Inventory systems</span><span>Product design</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <div class="cs-block"><div class="cs-h">The friction</div><p>Every shop ran on a different technical architecture and a stack of repetitive, manual steps. Work was duplicated across tools, consistency was hard to maintain, and scaling the catalog meant scaling the busywork right along with it.</p></div>
+        <div class="cs-block"><div class="cs-h">The system</div><p>A custom desktop operations platform that unifies product catalog management, AI-assisted artwork, Photoshop mockup automation, inventory and bin tracking, order management, fulfillment document generation, analytics, and publishing — presenting multiple shops through a single operational interface.</p></div>
+        <div class="cs-block outcome"><div class="cs-h">The outcome</div>
+          <ul>
+            <li>Centralized business operations in one place</li>
+            <li>Cut repetitive work and improved workflow consistency</li>
+            <li>Created scalable, repeatable operational processes</li>
+            <li>Made large product catalogs genuinely manageable</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE 3 -->
+    <div class="case">
+      <div class="case-side">
+        <div class="case-tag">Process Automation · University</div>
+        <h3>Billing that stopped depending on manual effort</h3>
+        <p class="ctx">A university's billing and tracking ran on manual processes that demanded significant administrative time and left room for errors and inconsistencies.</p>
+        <div class="caps">
+          <span>Process automation</span><span>Workflow redesign</span><span>Data management</span><span>Operational systems design</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <div class="cs-block"><div class="cs-h">The friction</div><p>Billing-related work was repetitive and hands-on. The manual approach consumed staff hours and created openings for the kind of small errors that compound over a term.</p></div>
+        <div class="cs-block"><div class="cs-h">The system</div><p>A billing automation system that streamlined the billing-related workflows end to end — reducing the manual touchpoints and standardizing how the work got done.</p></div>
+        <div class="cs-block outcome"><div class="cs-h">The outcome</div>
+          <ul>
+            <li>Improved operational efficiency</li>
+            <li>Reduced manual processing and administrative load</li>
+            <li>Increased consistency and reliability across the process</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE 4 -->
+    <div class="case">
+      <div class="case-side">
+        <div class="case-tag">Data Readiness · Association Software</div>
+        <h3>Bridging the gap between legacy data and a successful go-live</h3>
+        <p class="ctx">Across many association software implementations, the same onboarding pattern kept appearing — and it almost always traced back to data the organization wasn't ready to move.</p>
+        <div class="caps">
+          <span>Data extraction planning</span><span>Data mapping</span><span>Readiness assessment</span><span>Legacy system analysis</span><span>Migration preparation</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <div class="cs-block"><div class="cs-h">The pattern</div><p>Organizations couldn't export their legacy data. Critical information was missing. Data relationships were poorly understood. Volunteer-led teams with limited capacity got overwhelmed — and quietly cut migration scope just to get through it, losing history and value in the process.</p></div>
+        <div class="cs-block"><div class="cs-h">The expertise</div><p>Deep, repeatable capability in the part most vendors don't own: data extraction planning, data mapping, readiness assessment, legacy system analysis, and migration preparation for association management systems — closing the gap between a client's current data environment and a successful implementation.</p></div>
+        <div class="cs-block outcome"><div class="cs-h">The opportunity</div>
+          <ul>
+            <li>Helps organizations arrive at implementation already data-ready</li>
+            <li>Protects historical data instead of abandoning it under pressure</li>
+            <li>Turns a high-risk migration into a planned, validated transition</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<span id="pricing" class="anchor"></span>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Pricing Frameworks</span>
+      <h2>How engagements are structured.</h2>
+      <p>A practical pricing philosophy built around clear scope and shared confidence. These are the models and the logic for choosing between them — figures are set per engagement, once the work is properly understood.</p>
+    </div>
+
+    <!-- ENGAGEMENT LADDER -->
+    <span class="eyebrow plain" style="color:var(--muted-2);">The engagement ladder</span>
+    <div class="ladder" style="margin-top:18px;">
+      <div class="rung">
+        <div class="rn">STEP 01</div>
+        <h4>Paid Discovery / Assessment</h4>
+        <p>A low-commitment first step that maps the process, locks scope, and produces a written plan and deliverables — before anyone commits to a build.</p>
+        <span class="tagm">Fixed fee · short &amp; defined</span>
+        <div class="arrow-down"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+      </div>
+      <div class="rung">
+        <div class="rn">STEP 02</div>
+        <h4>Design &amp; Build</h4>
+        <p>The core engagement: design and build the system against the scope and acceptance criteria set in discovery. Priced as a fixed fee for defined deliverables.</p>
+        <span class="tagm">Fixed-fee project · milestones</span>
+        <div class="arrow-down"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+      </div>
+      <div class="rung">
+        <div class="rn">STEP 03</div>
+        <h4>Support &amp; Evolve</h4>
+        <p>For clients who want a standing partner: a monthly retainer with a defined scope of improvements, maintenance, and new workflow design as things change.</p>
+        <span class="tagm">Monthly retainer · defined scope</span>
+      </div>
+    </div>
+
+    <!-- PRICING MODELS TABLE -->
+    <span class="eyebrow plain" style="color:var(--muted-2);">The pricing models &amp; when each fits</span>
+    <div style="overflow-x:auto;margin-top:18px;">
+    <table class="pricing">
+      <thead>
+        <tr><th>Model</th><th>Best for</th><th>Why it fits this work</th><th>What to define up front</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Paid Discovery</td>
+          <td class="muted">Unclear or evolving scope; high-stakes decisions</td>
+          <td class="muted">De-risks the engagement and produces a written scope, plan, and deliverables before the build is priced.</td>
+          <td class="muted">Deliverables, timeline, and how it credits toward a build</td>
+        </tr>
+        <tr>
+          <td>Fixed-Fee Project</td>
+          <td class="muted">Well-defined builds with a clear endpoint</td>
+          <td class="muted">Most systems and migrations have a clear deliverable — clients get budget certainty, no clock-watching.</td>
+          <td class="muted">Scope, acceptance criteria, revisions, change rules</td>
+        </tr>
+        <tr>
+          <td>Productized Package</td>
+          <td class="muted">Repeatable offers (e.g. Data Readiness Assessment)</td>
+          <td class="muted">Same proven process sold the same way each time — fast to say yes to, predictable to deliver.</td>
+          <td class="muted">Fixed inputs, outputs, and turnaround</td>
+        </tr>
+        <tr>
+          <td>Monthly Retainer</td>
+          <td class="muted">Ongoing support, maintenance, and evolution</td>
+          <td class="muted">Predictable for both sides; keeps systems improving instead of decaying after launch.</td>
+          <td class="muted">Included scope, response times, rollover rules</td>
+        </tr>
+        <tr>
+          <td>Value-Based</td>
+          <td class="muted">Engagements with measurable, attributable impact</td>
+          <td class="muted">When the win is quantifiable (staff hours saved, a rescued migration), price can reflect the value created.</td>
+          <td class="muted">A clean baseline and agreed success measures</td>
+        </tr>
+        <tr>
+          <td>Hourly / T&amp;M</td>
+          <td class="muted">Truly open-ended or exploratory work</td>
+          <td class="muted">A fallback for unpredictable scope — used with a ceiling, then moved off of as scope firms up.</td>
+          <td class="muted">An hour ceiling and a review checkpoint</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- RECOMMENDED MODEL BY OFFERING -->
+    <span class="eyebrow plain" style="color:var(--muted-2);display:block;margin-top:46px;">Recommended model by offering</span>
+    <div class="map-list">
+      <div class="map-item"><span class="svc-n">Data Readiness Assessment</span><span class="mdl">Productized · fixed fee</span></div>
+      <div class="map-item"><span class="svc-n">Migration Preparation &amp; Mapping</span><span class="mdl">Fixed / phased project</span></div>
+      <div class="map-item"><span class="svc-n">Decision-Support System Design</span><span class="mdl">Fixed-fee build + support</span></div>
+      <div class="map-item"><span class="svc-n">Process &amp; Systems Consulting</span><span class="mdl">Discovery → project / retainer</span></div>
+      <div class="map-item"><span class="svc-n">Operations Diagnostic</span><span class="mdl">Productized paid discovery</span></div>
+      <div class="map-item"><span class="svc-n">Operations System Build</span><span class="mdl">Fixed-fee project</span></div>
+      <div class="map-item"><span class="svc-n">Workflow Automation &amp; Integration</span><span class="mdl">Fixed per workflow</span></div>
+      <div class="map-item"><span class="svc-n">Fractional Operations Support</span><span class="mdl">Monthly retainer</span></div>
+    </div>
+
+    <div class="note-card">
+      <span class="eyebrow plain">Positioning the price</span>
+      <p>Anchor the conversation to the cost of the <em>problem</em> — the staff hours lost to manual work, a stalled or failed migration, decisions made on numbers no one trusts — not to hours spent. Lead with a paid discovery so price follows a shared understanding of scope, present two or three options rather than a single take-it-or-leave-it number, and keep one-time builds clearly separate from ongoing retainers in both the proposal and the invoice.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WEBSITE COPY ============ -->
+<span id="copy" class="anchor"></span>
+<section class="section section--alt">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Website Copy</span>
+      <h2>Ready-to-use copy blocks.</h2>
+      <p>Lift these straight onto a site, or adapt the voice. Written in Tracy's first-person brand — direct, grounded, and free of jargon. Pick the variants that fit each page.</p>
+    </div>
+
+    <!-- HERO COPY -->
+    <div class="copy-block">
+      <div class="copy-head"><h4>Homepage hero</h4><span class="tagm">3 options</span></div>
+      <div class="copy-body">
+        <div class="opt">
+          <div class="ol">Option A · recommended</div>
+          <div class="hl">I turn messy, manual processes into systems people can actually run.</div>
+          <p class="small" style="margin-top:8px;">Sub-headline: For associations, nonprofits, and small businesses that have outgrown spreadsheets and tribal knowledge. I find what's really causing the friction — then design practical systems that make the work faster, clearer, and more reliable.</p>
+        </div>
+        <div class="opt">
+          <div class="ol">Option B</div>
+          <div class="hl">Messy process in. Clear system out.</div>
+          <p class="small" style="margin-top:8px;">Sub-headline: I'm a business systems designer who helps mission-driven organizations and small businesses replace fragile, manual work with systems they can trust.</p>
+        </div>
+        <div class="opt">
+          <div class="ol">Option C</div>
+          <div class="hl">The work shouldn't depend on one person remembering how it's done.</div>
+          <p class="small" style="margin-top:8px;">Sub-headline: I design data and workflow systems that capture how your organization really works — so the right things happen automatically, and decisions run on numbers you trust.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOUT COPY -->
+    <div class="copy-block">
+      <div class="copy-head"><h4>About / bio</h4><span class="tagm">Short · Medium · Long</span></div>
+      <div class="copy-body">
+        <div class="opt">
+          <div class="ol">Short — one-liner / footer</div>
+          <p>Tracy Warrington is a business systems designer who helps associations, nonprofits, and small businesses turn messy, manual processes into clear, reliable systems — using data, automation, and AI as tools, never as the headline.</p>
+        </div>
+        <div class="opt">
+          <div class="ol">Medium — about section</div>
+          <p>I'm a business systems designer, data specialist, and workflow builder. For years I've helped associations, nonprofits, leadership organizations, universities, and small businesses understand complicated processes, find what's actually causing the friction, and design practical systems that make decisions and day-to-day work easier.</p>
+          <p>My work spans data management, decision-support tools, process automation, reporting, and AI-assisted operations. I'm not primarily a software developer — I'm a systems thinker who uses technology to solve business problems. The goal is always the same: systems people will actually use, that keep working long after I'm gone.</p>
+        </div>
+        <div class="opt">
+          <div class="ol">Long — full about page</div>
+          <p>I'm Tracy Warrington — a business systems designer, data specialist, and workflow automation builder. Across my career I've supported associations, nonprofits, leadership organizations, universities, and small businesses, and a single theme runs through all of it: the ability to quickly understand a complicated process, identify the root cause of the friction, and design a system that makes the process easier, faster, and more reliable.</p>
+          <p>That has looked like a real-time decision-support tool that replaced a wall of paper charts during a leadership selection committee; a billing automation system that took the manual effort and errors out of university operations; a custom operations platform that runs multiple e-commerce shops from one interface; and deep, hands-on expertise getting association data ready for new software — the unglamorous, high-stakes work that determines whether an implementation succeeds.</p>
+          <p>I work across data architecture and migration planning, decision-support design, business process redesign, automation and integrations (including Airtable and Make.com), and AI-assisted operations. But I'm not primarily a developer. I'm a systems thinker who uses technology, automation, data, and AI as tools to solve real business problems. My greatest strength is taking a messy process, finding what's actually wrong, and designing something practical that helps people work more effectively — then documenting and teaching it so the knowledge belongs to your team, not to me.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SERVICES + HOW I WORK + PROOF -->
+    <div class="grid g-2" style="align-items:start;">
+      <div class="copy-block" style="margin-bottom:0;">
+        <div class="copy-head"><h4>Services intro</h4><span class="tagm">section lead</span></div>
+        <div class="copy-body">
+          <p>I work two ways, with one way of thinking. For <b>associations and nonprofits</b>, I focus on data readiness, migration preparation, and decision-support — the systems behind membership, selection, and reporting. For <b>small businesses</b>, I design connected operating systems and automations that replace scattered tools and manual handoffs.</p>
+          <p class="small">Most engagements begin with a paid diagnostic, so we lock scope and a plan before any build — and you always know what you're getting.</p>
+        </div>
+      </div>
+      <div class="copy-block" style="margin-bottom:0;">
+        <div class="copy-head"><h4>How I work</h4><span class="tagm">process copy</span></div>
+        <div class="copy-body">
+          <p>Every engagement follows the same disciplined path: <b>discover</b> the real process and the people running it, <b>diagnose</b> the root causes of friction, <b>design</b> a better workflow, <b>build</b> it practically, then <b>document and train</b> so your team owns it.</p>
+          <p class="small">I design for the humans doing the work. A system that's technically elegant but no one uses isn't a system — it's a shelf.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAGLINES -->
+    <div class="copy-block" style="margin-top:20px;">
+      <div class="copy-head"><h4>Taglines &amp; positioning lines</h4><span class="tagm">mix &amp; match</span></div>
+      <div class="copy-body">
+        <div class="tagline-grid">
+          <div class="tagline"><span>Primary</span>Systems that make the hard parts simple.</div>
+          <div class="tagline"><span>Punchy</span>Messy process in. Clear system out.</div>
+          <div class="tagline"><span>Niche · Track A</span>Get your data ready before you migrate.</div>
+          <div class="tagline"><span>Track B</span>One operating system, not ten disconnected tools.</div>
+          <div class="tagline"><span>Philosophy</span>Technology is the tool. Clear thinking is the work.</div>
+          <div class="tagline"><span>Outcome</span>Build the system. Keep the knowledge.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ELEVATOR + META -->
+    <div class="grid g-2" style="align-items:start;margin-top:20px;">
+      <div class="copy-block" style="margin-bottom:0;">
+        <div class="copy-head"><h4>Elevator pitch</h4><span class="tagm">spoken · written</span></div>
+        <div class="copy-body">
+          <div class="opt">
+            <div class="ol">Networking (spoken)</div>
+            <p>"You know how organizations end up running on spreadsheets, sticky notes, and one person who remembers how everything works? I fix that. I design systems that capture the process — so the work happens reliably and the knowledge doesn't walk out the door."</p>
+          </div>
+          <div class="opt">
+            <div class="ol">Cold email / intro (written)</div>
+            <p class="small">I help associations and small businesses turn manual, error-prone processes into systems they can trust. If your team is drowning in spreadsheets, dreading a software migration, or losing hours to work a system should handle, that's exactly what I do — and I'd be glad to take a look.</p>
+          </div>
+        </div>
+      </div>
+      <div class="copy-block" style="margin-bottom:0;">
+        <div class="copy-head"><h4>SEO / metadata</h4><span class="tagm">title + description</span></div>
+        <div class="copy-body">
+          <div class="opt">
+            <div class="ol">Title tag</div>
+            <p class="small">Tracy Warrington — Business Systems &amp; Process Consultant</p>
+          </div>
+          <div class="opt">
+            <div class="ol">Meta description</div>
+            <p class="small">Business systems designer helping associations, nonprofits, and small businesses turn messy, manual processes into clear, reliable systems — data readiness, workflow automation, and decision-support.</p>
+          </div>
+          <div class="opt">
+            <div class="ol">CTA line</div>
+            <p class="small">Tell me about the process that's driving you crazy. I'll tell you how I'd untangle it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LINKEDIN ============ -->
+<span id="linkedin" class="anchor"></span>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">LinkedIn Content</span>
+      <h2>Profile and a content engine.</h2>
+      <p>A profile that positions Tracy as a systems thinker, plus content pillars and ready-to-post drafts that build authority in both tracks without sounding like a generic AI consultant.</p>
+    </div>
+
+    <!-- HEADLINE -->
+    <div class="copy-block">
+      <div class="copy-head"><h4>Headline options</h4><span class="tagm">under 220 characters</span></div>
+      <div class="copy-body">
+        <div class="li-headline"><span>Option A · recommended</span>Business Systems Designer · I turn messy, manual processes into systems people can actually run · Data readiness, workflow automation &amp; decision-support for associations, nonprofits &amp; small business</div>
+        <div class="li-headline"><span>Option B · niche-forward</span>I help associations &amp; nonprofits get data-ready and build systems that work · Data migration prep · Decision-support · Process &amp; workflow design</div>
+        <div class="li-headline"><span>Option C · outcome-forward</span>Systems thinker for mission-driven orgs &amp; small business · Less manual work, better data, decisions you can trust · Automation &amp; AI used as tools, not hype</div>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <div class="copy-block">
+      <div class="copy-head"><h4>About section</h4><span class="tagm">first person</span></div>
+      <div class="copy-body">
+        <p>Most organizations don't have a technology problem. They have a process problem wearing a technology costume.</p>
+        <p>I'm a business systems designer, data specialist, and workflow builder. I help associations, nonprofits, leadership organizations, universities, and small businesses understand a complicated process, find what's actually causing the friction, and design a practical system that makes it easier, faster, and more reliable.</p>
+        <p>A few examples: I replaced a leadership committee's wall of paper charts and stick figures with a real-time decision-support tool that tracked scores, demographics, and geography as decisions changed live. I built a billing automation system that took manual effort and errors out of university operations. I designed an operations platform that runs multiple e-commerce shops from a single interface. And I've developed deep expertise in the part of association software migrations most people dread — getting messy legacy data clean, mapped, and ready so an implementation actually succeeds.</p>
+        <p>What ties it together: I'm not primarily a software developer. I'm a systems thinker who uses data, automation, and AI as tools to solve business problems. I design for the people doing the work, and I document and train so the knowledge stays with your team.</p>
+        <p>If your organization is running on spreadsheets and tribal knowledge, staring down a software migration, or losing hours to work a system should handle — let's talk.</p>
+        <p class="small" style="margin-top:6px;">▸ Data readiness &amp; migration prep · Decision-support systems · Process &amp; workflow redesign · Automation &amp; integrations (Airtable, Make.com) · AI-assisted operations · Reporting &amp; analytics</p>
+      </div>
+    </div>
+
+    <!-- FEATURED TIP -->
+    <div class="copy-block">
+      <div class="copy-head"><h4>Featured &amp; experience tips</h4><span class="tagm">profile setup</span></div>
+      <div class="copy-body">
+        <p class="small"><b>Featured section:</b> pin three items — the Leadership Selection case study, the Etsy Command Center, and a short "Is your association data-ready? A 10-point checklist" post. These cover both tracks and show range.</p>
+        <p class="small" style="margin-bottom:0;"><b>Experience entries:</b> reframe each role around outcomes, not duties. Lead with the problem you solved ("Selection committee tracked demographics on paper") and the system you built — the same Challenge → System → Outcome shape as the case studies.</p>
+      </div>
+    </div>
+
+    <!-- CONTENT PILLARS -->
+    <span class="eyebrow plain" style="color:var(--muted-2);display:block;margin-top:42px;">Content pillars</span>
+    <div class="grid g-4" style="margin-top:18px;">
+      <div class="pillar"><div class="pn">01</div><h4>Systems thinking</h4><p>How to spot the real root cause of friction — and why most "tech problems" are process problems.</p></div>
+      <div class="pillar"><div class="pn">02</div><h4>Data &amp; migrations</h4><p>Practical, reassuring guidance for associations facing AMS/CRM changes and data readiness.</p></div>
+      <div class="pillar"><div class="pn">03</div><h4>Ops &amp; automation</h4><p>Small-business systems, connected tools, and automations that quietly remove manual work.</p></div>
+      <div class="pillar"><div class="pn">04</div><h4>Practical AI</h4><p>Where AI genuinely earns its place in operations — and where it's just hype and risk.</p></div>
+    </div>
+
+    <!-- SAMPLE POSTS -->
+    <span class="eyebrow plain" style="color:var(--muted-2);display:block;margin-top:42px;">Sample posts — ready to adapt</span>
+    <div class="grid g-2" style="margin-top:18px;">
+      <div class="post">
+        <div class="post-head"><span class="tag">Pillar 01 · Story</span><span class="fmt">Story → lesson</span></div>
+        <div class="post-body"><span class="hook">A leadership committee once tracked its entire selection process with stick figures taped to the wall.</span>
+
+Real paper charts. Hand-drawn figures for gender, geography, age, industry. Every time an applicant moved from "Hold" to "Accepted," someone updated every board by hand.
+
+It wasn't that they lacked smart people. The process had simply outgrown its tools.
+
+We replaced the wall with a real-time tool that recalculated the whole class the instant a decision changed. Same committee, same criteria — but now they could see the trade-offs live and decide with confidence.
+
+The lesson I keep relearning: when a team is buried in manual tracking, they don't need to work harder. They need a system that does the tracking for them.
+
+What's your organization still tracking by hand?</div>
+      </div>
+      <div class="post">
+        <div class="post-head"><span class="tag">Pillar 02 · POV</span><span class="fmt">Contrarian take</span></div>
+        <div class="post-body"><span class="hook">Your new association software won't fix your data. That's not what you're paying them for.</span>
+
+A hard truth I've watched play out across many implementations: the vendor configures the platform. Getting your data ready to live in it? That's on you.
+
+So go-live arrives and the duplicates come too. The missing fields. The membership types that mean three different things across three departments. Reports no one trusts.
+
+The fix isn't a better vendor. It's doing the unglamorous work first:
+• Inventory every place your data actually lives
+• Clean, de-duplicate, and standardize before you move
+• Map your real relationships to the new model
+• Test with a small batch before the big migration
+
+Boring? Completely. It's also the difference between a launch and a year of cleanup.
+
+Migrating soon? Start the data conversation before the software conversation.</div>
+      </div>
+      <div class="post">
+        <div class="post-head"><span class="tag">Pillar 04 · Framework</span><span class="fmt">Listicle</span></div>
+        <div class="post-body"><span class="hook">"Should we use AI for this?" Here's the test I actually use.</span>
+
+AI is a tool, not a strategy. Before I add it to any workflow, it has to pass three questions:
+
+1. Is there a real, repetitive task underneath it? (If the process is broken, AI just breaks it faster.)
+2. Can a human still check the output where it matters? (Trust, but verify.)
+3. Does it beat the simpler option? (Sometimes a rule or a template wins.)
+
+If it passes, AI can be genuinely transformative — drafting, classifying, summarizing, enriching. If it doesn't, I leave it out and tell the client why.
+
+The goal was never "use AI." The goal is a system that works.
+
+Where has AI actually earned its place in your operation?</div>
+      </div>
+      <div class="post">
+        <div class="post-head"><span class="tag">Pillar 03 · Value</span><span class="fmt">Quick tip</span></div>
+        <div class="post-body"><span class="hook">If your business runs on ten disconnected tools, the problem usually isn't the tools.</span>
+
+It's the handoffs between them.
+
+A lead comes in here. The project lives there. Client info is in a spreadsheet. Someone copies and pastes between all of it — and that someone is your bottleneck and your single point of failure.
+
+You rarely need to replace the tools. You need:
+• One source of truth for your core data
+• Automated handoffs so nothing depends on someone remembering
+• Documentation so the system isn't trapped in one head
+
+That's the difference between software you own and software that owns you.
+
+What's the most annoying copy-paste step in your week? I'll suggest how I'd automate it.</div>
+      </div>
+    </div>
+
+    <!-- CADENCE -->
+    <div class="note-card" style="margin-top:30px;">
+      <span class="eyebrow plain">Starter cadence</span>
+      <p>Two posts a week is plenty to build momentum. Rotate the pillars so you're never "all AI" or "all migration": <b>week 1</b> — a systems-thinking story + a Track A data tip; <b>week 2</b> — a small-business ops tip + a practical-AI take. Re-share your best-performing post monthly, and turn any post that sparks comments into a longer article or a Featured item.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLOSER / NEXT STEPS ============ -->
+<span id="contact" class="anchor"></span>
+<section class="section">
+  <div class="wrap">
+    <div class="closer">
+      <span class="eyebrow" style="color:#5fd6bd;justify-content:center;display:flex;">Using this toolkit</span>
+      <h2>Everything here is a building block.</h2>
+      <p>Each section is written to lift straight into your real website, LinkedIn profile, and client proposals. Start with the positioning, choose the offerings that fit, and let the copy do the talking.</p>
+      <div class="usegrid">
+        <div class="usecard"><div class="un">01</div><h4>Stand up the site</h4><p>Use the hero, about, and services copy to build a simple one-page site around the dual-track positioning.</p></div>
+        <div class="usecard"><div class="un">02</div><h4>Activate LinkedIn</h4><p>Update the headline and About section today; schedule the four sample posts to start building authority.</p></div>
+        <div class="usecard"><div class="un">03</div><h4>Sell with structure</h4><p>Lead every prospect with a paid discovery, then quote the build using the pricing ladder and model map.</p></div>
+      </div>
+      <div class="hero-cta" style="margin-top:34px;">
+        <a href="#services" class="btn btn--light">Review the offerings</a>
+        <a href="#positioning" class="btn btn--ghost" style="color:#fff;border-color:rgba(255,255,255,.35);">Back to positioning</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap foot-inner">
+    <div class="brand">
+      <b>Tracy Warrington</b>
+      <span>Systems Designer · Process &amp; Data Consultant</span>
+    </div>
+    <p class="foot-note">Positioning &amp; go-to-market toolkit — a working draft of consulting offerings, case studies, pricing frameworks, website copy, and LinkedIn content. Built to be edited, adapted, and put to work.</p>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  var t=document.getElementById('menuToggle'),l=document.getElementById('navLinks');
+  if(t){t.addEventListener('click',function(){l.classList.toggle('open');});}
+  document.querySelectorAll('#navLinks a').forEach(function(a){a.addEventListener('click',function(){l.classList.remove('open');});});
+</script>
+<script>
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape' && window.parent !== window) {
+    window.parent.postMessage({ type: 'close-fullscreen' }, '*');
+  }
+});
+</script>
+<!-- broken-img-handler -->
+<script>
+(function(){
+  if(window.__brokenImgHandler)return;
+  window.__brokenImgHandler=true;
+  var MAX=5,DELAYS=[2000,4000,8000,16000,32000];
+  document.addEventListener('error',function(e){
+    var img=e.target;
+    if(!img||img.tagName!=='IMG')return;
+    var liveSrc=img.getAttribute('src');
+    var src=img.dataset.haOriginalSrc||liveSrc;
+    if(!src)return;
+    if(img.dataset.haOriginalSrc&&liveSrc&&liveSrc!==img.dataset.haOriginalSrc&&liveSrc.indexOf('_r=')<0){src=liveSrc;img.dataset.haOriginalSrc=src;img.dataset.haRetryCount='0'}
+    else if(!img.dataset.haOriginalSrc){img.dataset.haOriginalSrc=src}
+    var attempt=parseInt(img.dataset.haRetryCount||'0',10);
+    if(img.dataset.haPhId){var old=document.getElementById(img.dataset.haPhId);if(old)old.remove()}
+    var ph=document.createElement('div');
+    ph.className='ha-img-placeholder'+(attempt>=MAX?' ha-failed':'');
+    ph.id='ha-ph-'+Math.random().toString(36).slice(2,9);
+    var w=img.getAttribute('width');var h=img.getAttribute('height');
+    if(w)ph.style.width=w+(isNaN(Number(w))?'':'px');
+    else if(img.style.width)ph.style.width=img.style.width;
+    else if(img.width>1)ph.style.width=img.width+'px';
+    if(h)ph.style.height=h+(isNaN(Number(h))?'':'px');
+    else if(img.style.height)ph.style.height=img.style.height;
+    else if(img.height>1)ph.style.height=img.height+'px';
+    ph.textContent=attempt>=MAX?'Image unavailable':'Loading image\u2026';
+    img.dataset.haPhId=ph.id;
+    if(img.dataset.haOrigDisplay==null)img.dataset.haOrigDisplay=img.style.display||'';
+    img.style.display='none';
+    img.insertAdjacentElement('afterend',ph);
+    if(attempt<MAX){
+      img.dataset.haRetryCount=String(attempt+1);
+      setTimeout(function(){
+        if(!img.isConnected)return;
+        if(img.dataset.haOriginalSrc!==src)return;
+        if(img.complete&&img.naturalWidth>0)return;
+        var curSrc=img.getAttribute('src');
+        if(curSrc&&curSrc.indexOf(src)!==0)return;
+        var fresh=src+(src.indexOf('?')>=0?'&':'?')+'_r='+(attempt+1)+'_'+Date.now();
+        img.src=fresh;
+      },DELAYS[attempt]);
+    }
+  },true);
+  document.addEventListener('load',function(e){
+    var img=e.target;
+    if(!img||img.tagName!=='IMG')return;
+    if(img.dataset.haPhId){
+      var ph=document.getElementById(img.dataset.haPhId);
+      if(ph)ph.remove();
+      delete img.dataset.haPhId;
+      img.style.display=img.dataset.haOrigDisplay||'';
+      delete img.dataset.haOrigDisplay;
+      delete img.dataset.haOriginalSrc;
+      delete img.dataset.haRetryCount;
+    }
+  },true);
+})();
+</script>
+</body>
+</html>
